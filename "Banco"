@@ -1,0 +1,46 @@
+import javax.swing.JOptionPane;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		double dinheiro = 0;
+		String selecao = "nada";
+		
+		while (!selecao.contentEquals("0")) {
+			selecao = JOptionPane.showInputDialog("1 - Deposito\n"
+				+ "2 - Sacar\n"
+				+ "3 - Consultar\n"
+				+ "0 - Sair");
+		}
+		//JOptionPane.showMessageDialog(null,seleçao);
+		
+		switch(selecao) {
+			case "1":
+				//Depositar
+			double deposito = Double.parseDouble(JOptionPane.showInputDialog("digite a quantidade para depositar:"));
+			dinheiro += deposito;
+			JOptionPane.showMessageDialog(null, "Deposito ok");
+				//JOptionPane.showMessageDialog(null,seleçao+"!");
+			break;
+			
+			case "2":
+				double saque = Double
+				.parseDouble(JOptionPane.showInputDialog("Digite a " + "quantidade a sacar"));
+				if(dinheiro < saque) {
+					 JOptionPane.showMessageDialog(null, "Sem Saldo!");
+					
+				}else
+				dinheiro -= saque;
+				JOptionPane.showMessageDialog(null, "Saque ok!");
+			break;
+			
+			case "3":
+				JOptionPane.showMessageDialog(null, "Saldo:" +dinheiro);
+				break;
+		
+		}
+
+	}
+
+}
